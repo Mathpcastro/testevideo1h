@@ -14,13 +14,6 @@ import { Link } from "react-router-dom";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 
 const Landing = () => {
-  const checkoutUrl = "https://go.tribopay.com.br/mlq22";
-  
-  const handleCheckout = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.open(checkoutUrl, "_blank", "noopener,noreferrer");
-  };
-  
   return (
     <div className="min-h-screen">
       {/* Cabeçalho */}
@@ -35,9 +28,9 @@ const Landing = () => {
             <a href="#funcionalidades" className="text-base text-gray-600 hover:text-primary">Funcionalidades</a>
             <a href="#depoimentos" className="text-base text-gray-600 hover:text-primary">Depoimentos</a>
             <a href="#precos" className="text-base text-gray-600 hover:text-primary">Preços</a>
-            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" onClick={handleCheckout}>
+            <Link to="/auth">
               <Button className="text-base px-4 py-2">Iniciar Agora</Button>
-            </a>
+            </Link>
           </nav>
         </div>
       </header>
@@ -52,11 +45,11 @@ const Landing = () => {
             <p className="text-xl md:text-3xl text-gray-800 mb-8 z-10">
               Prepare-se para suas provas com interações personalizadas e materiais de qualidade.
             </p>
-            <a href={checkoutUrl} target="_blank" rel="noopener noreferrer" onClick={handleCheckout} className="z-10">
+            <Link to="/auth" className="z-10">
               <Button size="lg" className="text-lg px-7 py-5">
                 Experimente Grátis
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </AuroraBackground>
@@ -215,14 +208,9 @@ const Landing = () => {
                     </li>
                   ))}
                 </ul>
-                <a 
-                  href={checkoutUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  onClick={handleCheckout}
-                >
+                <Link to="/auth">
                   <Button className="w-full text-base py-2">Assine Agora</Button>
-                </a>
+                </Link>
               </div>
             ))}
           </div>
@@ -233,16 +221,11 @@ const Landing = () => {
       <section className="py-16 bg-primary/5">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Experimente 7 Dias Grátis!</h2>
-          <a 
-            href={checkoutUrl} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            onClick={handleCheckout}
-          >
+          <Link to="/auth">
             <Button size="lg" className="text-lg px-7 py-4">
               Comece Agora
             </Button>
-          </a>
+          </Link>
         </div>
       </section>
 
